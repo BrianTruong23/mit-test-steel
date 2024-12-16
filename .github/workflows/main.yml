@@ -43,5 +43,16 @@ jobs:
       - name: Run automate.py
         run: python automate.py
 
-      # Step 6: Post-run status
+      # Step 6: Commit and push changes
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.name "github-actions"
+          git config --local user.email "github-actions@github.com"
+          git add .
+          git commit -m "Automated update: processed and updated files"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Step 7: Post-run status
       - run: echo "🍏 The script execution completed with status ${{ job.status }}."
