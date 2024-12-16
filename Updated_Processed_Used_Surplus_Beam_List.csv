@@ -1,11 +1,11 @@
 Description,Lengths,Weight,Code,A
-6x12.5,40',500# ea.,SWF06125,3.66
+6x12.5,40',500# ea.,SWF06125,
 8x13,24',533# ea.,SWF0813,3.84
 8x13,25',325# ea.,USBEAM,3.84
 8x15,23',345# ea.,SWF0815,4.44
 8x15,27',405# ea.,USBEAM,4.44
 8x18,"14' 8""",264# ea.,USBEAM,5.26
-8x18.4,40',736# ea.,SWF8184,5.4
+8x18.4,40',736# ea.,SWF8184,
 8x21,12',252# ea.,USBEAM,6.16
 8x21,18',378# ea.,USBEAM,6.16
 8x21,"22' 5""",471# ea.,USBEAM,6.16
@@ -28,7 +28,6 @@ Description,Lengths,Weight,Code,A
 10x19,27',513# ea.,SWF1019,5.62
 10x19,50',950# ea.,SWF1019,5.62
 10x30,"24' 4""",730# ea.,USBEAM,8.84
-10x30,"24' 4""",730# ea.,USBEAM,8.81
 10x68,12',816# ea.,USBEAM,19.9
 12x14,17',238# ea.,USBEAM,4.16
 12x22,21',462# ea.,USBEAM,6.48

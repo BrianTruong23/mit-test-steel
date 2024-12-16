@@ -61,7 +61,10 @@ def match_and_update(processed_csv, aisc_csv, final_csv):
     def clean_aisc_label(label):
         if pd.isna(label):
             return None
-        return label[1:].replace("X", "x")
+        elif label[0:1] != "W":
+            return label
+        else:
+            return label[1:].replace("X", "x")
 
     df_aisc['Processed_Label'] = df_aisc['AISC_Manual_Label'].apply(clean_aisc_label)
     df_merged = pd.merge(
@@ -75,8 +78,6 @@ def match_and_update(processed_csv, aisc_csv, final_csv):
     df_merged.to_csv(final_csv, index=False)
     print(f"Updated file saved as: {final_csv}")
 
-
-import pandas as pd
 
 def duplicate_entry_based_on_pieces(final_csv):
     """
