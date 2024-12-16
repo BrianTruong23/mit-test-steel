@@ -94,13 +94,25 @@ def duplicate_entry_based_on_pieces(final_csv):
         try:
             # Get the 'Pieces' value, default to 1 if it's missing or invalid
             pieces = row.get('Pieces', 1)
-            pieces = int(pieces) if pd.notna(pieces) and str(pieces).isdigit() else 1
-            
+            # print(pieces)
+            # print(type(pieces))  # Check the type
+
+            # Convert pieces to an integer if it's a valid float or int
+            if pd.notna(pieces):  # Check if not NaN
+                try:
+                    # Convert to int after ensuring it’s a number
+                    pieces = int(float(pieces))
+                except (ValueError, TypeError):
+                    pieces = 1
+            else:
+                pieces = 1
+
             # Step 4: Append the row to the list, repeating it based on 'Pieces'
             for _ in range(pieces):
                 duplicated_rows.append(row)
-        except ValueError:
-            print(f"Warning: Invalid 'Pieces' value at row {index}, defaulting to 1.")
+
+        except Exception as e:
+            print(f"Warning: Invalid 'Pieces' value at row {index}, defaulting to 1. Error: {e}")
             duplicated_rows.append(row)
 
     # Step 5: Convert the list back into a DataFrame
