@@ -113,7 +113,7 @@ def duplicate_entry_based_on_pieces(final_csv):
     df_duplicated.to_csv(final_csv, index=False)
     print(f"Entries duplicated based on 'Pieces' column and saved to: {final_csv}")
 
-# Main Execution
+# Main Execution For Automation
 if __name__ == "__main__":
     # File paths and URLs
     pdf_url = "https://www.midcitysteel.com/annex/Used_Surplus_Beam_List.pdf"
