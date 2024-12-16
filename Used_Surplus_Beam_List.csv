@@ -38,7 +38,6 @@ Description,Pieces,Lengths,Weight,Code
 12 x 252#,1,"17' 2""","4,326# ea",USBEAM
 14 x 22#,1,25',550# ea,USBEAM
 14 x 30# (Dented in Flange),1,"16' 3""",488# ea,USBEAM
-Description,Pieces,Lengths,Weight,Code
 14 x 34#,1,"23' 8""",805# ea,USBEAM
 14 x 34#,1,50',"1,700# ea",USBEAM
 14 x 38#,1,"12' 2""",462# ea,USBEAM
@@ -78,7 +77,6 @@ Description,Pieces,Lengths,Weight,Code
 21 x 147#,6,40',"5,880# ea",SWF21147
 24 x 55#,2,42',"2,310# ea",SWF2455
 24 x 62#,1,"11' 7""",718# ea,USBEAM
-Description,Pieces,Lengths,Weight,Code
 24 x 62#,1,"14' 6""",899# ea,USBEAM
 24 x 62#,1,"18' 8""","1,157# ea.",SWF2462
 24 x 62#,1,"25' 6""","1,581# ea",SWF2462

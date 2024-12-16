@@ -14,25 +14,39 @@ def download_pdf(url, output_file):
 
 # Function 2: Extract data from PDF and save to CSV
 def extract_pdf_to_csv(pdf_file, csv_file):
-    data = []
+    data = []  # To store extracted rows
+    header = None  # Placeholder for the header row
+    header_seen = False  # Flag to track if the header is already set
+
+    # Step 1: Extract tables from the PDF
     with pdfplumber.open(pdf_file) as pdf:
         for page in pdf.pages:
             tables = page.extract_tables()
             for table in tables:
                 for row in table:
-                    data.append(row)
-    df = pd.DataFrame(data)
-    df.to_csv(csv_file, index=False, header=False)
+                    if not header_seen:  # First row encountered is the header
+                        header = row
+                        header_seen = True
+                    elif row != header:  # Skip rows that are duplicate headers
+                        data.append(row)
+
+    # Step 2: Convert to DataFrame with proper headers
+    df = pd.DataFrame(data, columns=header)  # Use the first header row as column names
+
+    # Step 3: Save the DataFrame to a CSV file
+    df.to_csv(csv_file, index=False)  # Save the CSV with header included
     print(f"Data extracted and saved to CSV: {csv_file}")
+
 
 # Function 3: Process the Description column
 def process_description(input_csv, output_csv):
-    df = pd.read_csv(input_csv)
+    df = pd.read_csv(input_csv, header = 0)
 
     def clean_description(description):
         if pd.isna(description):
             return None
-        cleaned = description.replace(" ", "").replace("#", "").split("I-Beam")[0]
+        # cleaned = description.replace(" ", "").replace("#", "").split("I-Beam")[0]
+        cleaned = description.replace(" ", "").split('#')[0]
         return cleaned
 
     df['Description'] = df['Description'].apply(clean_description)
@@ -41,8 +55,8 @@ def process_description(input_csv, output_csv):
 
 # Function 4: Match with AISC database and append A values
 def match_and_update(processed_csv, aisc_csv, final_csv):
-    df_processed = pd.read_csv(processed_csv)
-    df_aisc = pd.read_csv(aisc_csv)
+    df_processed = pd.read_csv(processed_csv, header = 0)
+    df_aisc = pd.read_csv(aisc_csv, header = 0)
 
     def clean_aisc_label(label):
         if pd.isna(label):
@@ -69,7 +83,7 @@ def duplicate_entry_based_on_pieces(final_csv):
     Duplicate entries in the CSV file based on the 'Pieces' column.
     """
     # Step 1: Load the processed CSV file
-    df_processed = pd.read_csv(final_csv)
+    df_processed = pd.read_csv(final_csv, header = 0)
     
     # Step 2: Create an empty list to store the duplicated rows
     duplicated_rows = []
