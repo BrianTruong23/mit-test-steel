@@ -1,12 +1,9 @@
-name: Run automate.py
+name: Daily Run of automate.py
 
 on:
-  push:
-    branches:
-      - main  # Specify branches to trigger the workflow
-  pull_request:
-    branches:
-      - main
+  schedule:
+    # Runs the workflow daily at 12:00 AM UTC
+    - cron: '0 0 * * *'
 
 jobs:
   Run-Python-Script:
@@ -21,9 +18,9 @@ jobs:
       - name: Set up Python 3.10
         uses: actions/setup-python@v4
         with:
-          python-version: 3.14.0-alpha.0  # Specify the version of Python
+          python-version: 3.10
 
-      # Step 3: Install dependencies (if any)
+      # Step 3: Install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
