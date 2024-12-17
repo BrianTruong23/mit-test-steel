@@ -1,6 +1,8 @@
 import requests
 import pdfplumber
 import pandas as pd
+from datetime import datetime
+import os
 
 # Function 1: Download the PDF
 def download_pdf(url, output_file):
@@ -40,7 +42,6 @@ def extract_pdf_to_csv(pdf_file, csv_file):
 
 # Function 3: Process the Description column
 def process_description(input_csv, output_csv):
-    import pandas as pd  # Ensure pandas is imported
 
     # Read the input CSV file
     df = pd.read_csv(input_csv, header=0)
@@ -56,8 +57,10 @@ def process_description(input_csv, output_csv):
         # Further processing to round down numbers before 'x'
         try:
             base_part = cleaned.split("x")[0]  # Extract part before 'x'
-            rounded_down = int(float(base_part))  # Convert to float, then round down to an integer
-            final = f"{rounded_down}x{cleaned.split('x')[1]}"  # Reconstruct the description
+            base_part_2 = cleaned.split("x")[1]
+            rounded_down_1 = int(float(base_part))  # Convert to float, then round down to an integer
+            rounded_down_2 = int(float(base_part_2))
+            final = f"{rounded_down_1}x{rounded_down_2}"  # Reconstruct the description
             return final
         except (ValueError, IndexError):
             return cleaned  # Return the original cleaned value if processing fails
@@ -68,6 +71,7 @@ def process_description(input_csv, output_csv):
     # Function to convert lengths into inches
     def convert_length(length):
         try:
+            length = str(length).split('(')[0]
             # Extract feet and inches, handling cases where inches might be missing
             feet = int(length.split("'")[0]) if "'" in str(length) else 0
             inches = int(length.split("'")[1].replace('"', '')) if '"' in str(length) else 0
@@ -159,14 +163,20 @@ def duplicate_entry_based_on_pieces(final_csv):
 
 # Main Execution For Automation
 if __name__ == "__main__":
+    # Generate current date in YYYY-MM-DD format
+    current_date = datetime.now().strftime("%Y-%m-%d")
+
+    final_output_link = "final_output"
+    other_output_link = "other_output"
+
     # File paths and URLs
     pdf_url = "https://www.midcitysteel.com/annex/Used_Surplus_Beam_List.pdf"
-    pdf_file = "Used_Surplus_Beam_List.pdf"
-    raw_csv_file = "Used_Surplus_Beam_List.csv"
-    processed_csv_file = "Processed_Used_Surplus_Beam_List.csv"
+    pdf_file = f"Used_Surplus_Beam_List_{current_date}.pdf"
+    raw_csv_file = os.path.join(other_output_link, f"Used_Surplus_Beam_List_{current_date}.csv") 
+    processed_csv_file = os.path.join(other_output_link, f"Processed_Used_Surplus_Beam_List_{current_date}.csv")  
     # aisc_csv_file = "aisc-shapes-database-v16.0.csv"
     aisc_csv_file = "https://raw.githubusercontent.com/BrianTruong23/test-upload/refs/heads/main/aisc-shapes-database-v16.0.csv"
-    final_csv_file = "Updated_Processed_Used_Surplus_Beam_List.csv"
+    final_csv_file = os.path.join(final_output_link,  f"Updated_Processed_Used_Surplus_Beam_List_{current_date}.csv")  
 
     # Call functions in sequence
     download_pdf(pdf_url, pdf_file)
