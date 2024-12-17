@@ -40,18 +40,49 @@ def extract_pdf_to_csv(pdf_file, csv_file):
 
 # Function 3: Process the Description column
 def process_description(input_csv, output_csv):
-    df = pd.read_csv(input_csv, header = 0)
+    import pandas as pd  # Ensure pandas is imported
 
+    # Read the input CSV file
+    df = pd.read_csv(input_csv, header=0)
+
+    # Function to clean the Description column
     def clean_description(description):
-        if pd.isna(description):
+        if pd.isna(description):  # Handle missing values
             return None
-        # cleaned = description.replace(" ", "").replace("#", "").split("I-Beam")[0]
-        cleaned = description.replace(" ", "").split('#')[0]
-        return cleaned
 
+        # Remove spaces and split on '#'
+        cleaned = description.replace(" ", "").split('#')[0]
+        
+        # Further processing to round down numbers before 'x'
+        try:
+            base_part = cleaned.split("x")[0]  # Extract part before 'x'
+            rounded_down = int(float(base_part))  # Convert to float, then round down to an integer
+            final = f"{rounded_down}x{cleaned.split('x')[1]}"  # Reconstruct the description
+            return final
+        except (ValueError, IndexError):
+            return cleaned  # Return the original cleaned value if processing fails
+
+    # Apply the cleaning function to the Description column
     df['Description'] = df['Description'].apply(clean_description)
+
+    # Function to convert lengths into inches
+    def convert_length(length):
+        try:
+            # Extract feet and inches, handling cases where inches might be missing
+            feet = int(length.split("'")[0]) if "'" in str(length) else 0
+            inches = int(length.split("'")[1].replace('"', '')) if '"' in str(length) else 0
+            final_length = feet * 12 + inches  # Convert to inches
+            return final_length
+        except (ValueError, IndexError):
+            return None  # Handle invalid or missing length values
+
+    # Apply the conversion function to the Lengths column
+    df["Lengths"] = df["Lengths"].apply(convert_length)
+
+    # Save the processed DataFrame to a new CSV file
     df.to_csv(output_csv, index=False)
     print(f"Processed file saved as: {output_csv}")
+
 
 # Function 4: Match with AISC database and append A values
 def match_and_update(processed_csv, aisc_csv, final_csv):
