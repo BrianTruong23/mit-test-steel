@@ -47,7 +47,7 @@ jobs:
 
           # Delete the PDF file in the root directory (example: Used_Surplus_Beam_List.pdf)
           rm -f *.pdf
-          echo "Deleted all files in final_output, other_output, and PDF f
+          echo "Deleted all files in final_output, other_output, and PDF files in the root directory."
 
       # Step 6: Run the Python script
       - name: Run automate.py
