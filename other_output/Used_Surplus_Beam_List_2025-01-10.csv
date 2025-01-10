@@ -11,7 +11,7 @@ Description,Pieces,Lengths,Weight,Code
 8 x 21#,1,"22' 5""",471# ea.,USBEAM
 8 x 21#,1,"30' 2""",634# ea.,USBEAM
 8 x 31#,2,7',217# ea.,USBEAM
-8 x 31#,3,"7' 11""",245# ea.,USBEAM
+8 x 31#,1,"7' 11""",245# ea.,USBEAM
 8 x 31#,6,8',248# ea.,USBEAM
 8 x 31#,2,10',310# ea.,USBEAM
 8 x 31#,1,"10' 1""",313# ea.,USBEAM
@@ -22,7 +22,6 @@ Description,Pieces,Lengths,Weight,Code
 8 x 31#,1,"12' 5""",385# ea.,USBEAM
 8 x 31#,1,"12' 6""",388# ea.,USBEAM
 8 x 31#,1,"12' 9""",395# ea.,USBEAM
-8 x 31#,1,"14' 11""",463# ea.,USBEAM
 8 x 31#,3,15',465# ea.,USBEAM
 8 x 48# (w/Holes in Web),1,"13' 3""",636# ea.,USBEAM
 10 x 19#,1,27',513# ea.,SWF1019

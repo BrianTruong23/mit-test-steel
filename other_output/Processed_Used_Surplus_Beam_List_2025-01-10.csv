@@ -11,7 +11,7 @@ Description,Pieces,Lengths,Weight,Code
 8x21,1.0,269,471# ea.,USBEAM
 8x21,1.0,362,634# ea.,USBEAM
 8x31,2.0,84,217# ea.,USBEAM
-8x31,3.0,95,245# ea.,USBEAM
+8x31,1.0,95,245# ea.,USBEAM
 8x31,6.0,96,248# ea.,USBEAM
 8x31,2.0,120,310# ea.,USBEAM
 8x31,1.0,121,313# ea.,USBEAM
@@ -22,7 +22,6 @@ Description,Pieces,Lengths,Weight,Code
 8x31,1.0,149,385# ea.,USBEAM
 8x31,1.0,150,388# ea.,USBEAM
 8x31,1.0,153,395# ea.,USBEAM
-8x31,1.0,179,463# ea.,USBEAM
 8x31,3.0,180,465# ea.,USBEAM
 8x48,1.0,159,636# ea.,USBEAM
 10x19,1.0,324,513# ea.,SWF1019
