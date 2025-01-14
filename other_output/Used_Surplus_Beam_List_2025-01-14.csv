@@ -47,11 +47,14 @@ Description,Pieces,Lengths,Weight,Code
 14 x 90#,1,34',"3,060# ea",SWF1490
 14 x 90#,5,46',"4,140# ea",SWF1490
 14 x 159#,1,40',"6,360# ea",SWF14159
+14 x 159#,3,"42' 4""","6,731# ea",SWF14159
+14 x 159#,3,"42' 8""","6,784# ea",SWF14159
 16 x 31#,1,19',589# ea.,SWF1631
 16 x 36#,1,"15' 3""",549# ea.,SWF1631
 18 x 35# w/Holes & Attachments,1,8',315# ea,USBEAM
 18 x 35#,1,9',315# ea.,SWF1835
 18 x 35#,1,"10' 6""",368# ea,USBEAM
+18 x 35#,1,40',"1,400# ea.",SWF1835
 18 x 40#,1,"11' 10""",473# ea,USBEAM
 18 x 46#,1,"14' 10""",682# ea,USBEAM
 18 x 60#,1,"19' 10""","1,172# ea.",SWF1860
@@ -59,6 +62,7 @@ Description,Pieces,Lengths,Weight,Code
 18 x 119#,1,"21' 5""","2,549# ea",USBEAM
 18 x 143#,1,"20' 6""","2,932# ea",USBEAM
 18 x 143#,1,"26' 4""","3,766# ea",USBEAM
+21 x 44#,1,"21' 8""",953# ea,SWF2144
 21 x 48#,1,"20' 6""",984# ea,USBEAM
 21 x 50#,1,"8' 3""",413# ea,USBEAM
 21 x 50#,1,"14' 9""",738# ea,USBEAM
@@ -70,6 +74,7 @@ Description,Pieces,Lengths,Weight,Code
 21 x 68#,1,23',"1,564# ea",USBEAM
 21 x 68#,2,"23' 3""","1,581# ea",USBEAM
 21 x 68# Heavy Rust,1,"30' 2""","2,051# ea",USBEAM
+21 x 73#,1,"23' 2""","1,691# ea",SWF2173
 21 x 83#,1,"19' 6""","1,619# ea",USBEAM
 21 x 83#,1,21',"1,743# ea",USBEAM
 21 x 93#,1,"16' 9""","1,558# ea",USBEAM
