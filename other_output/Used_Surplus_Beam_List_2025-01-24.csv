@@ -3,8 +3,7 @@ Description,Pieces,Lengths,Weight,Code
 6 x 12.5# I-Beam,2,40',500# ea.,SWF06125
 6 x 15#,1,20',300# ea.,SWF0615
 6 x 20#,1,"31' 7""",632# ea.,SWF0620
-8 x 13#,1,24',533# ea.,SWF0813
-8 x 13#,1,25',325# ea.,USBEAM
+8 x 13# ( Loc 275 ),1,"5' 4""",325# ea.,SWF0813
 8 x 15#,1,23',345# ea.,SWF0815
 8 x 18# ( w/Holes ),1,"14' 8""",264# ea.,USBEAM
 8 x 18.4# I-Beam,2,40',736# ea.,SWF8184
