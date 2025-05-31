@@ -12,7 +12,6 @@ Description,Pieces,Lengths,Weight,Code
 8x15,1,93,116# ea.,SWF0815
 8x15,1,132,165# ea.,SWF0815
 8x15,1,276,345# ea.,SWF0815
-8x18,1,176,264# ea.,USBEAM
 8x18,2,480,736# ea.,SWF8184
 8x21,1,133,233# ea.,SWF0821
 8x21,1,144,252# ea.,USBEAM
@@ -93,7 +92,6 @@ Description,Pieces,Lengths,Weight,Code
 14x43,1,360,"1,290# ea",USBEAM
 14x68,1,372,"2,108# ea",WF1468
 14x89,1,180,"1,335# ea",USBEAM
-14x90,1,293,"2,198# ea",USBEAM
 14x90,1,408,"3,060# ea",SWF1490
 14x90,3,552,"4,140# ea",SWF1490
 14x99,1,114,941# ea,SWF1499
