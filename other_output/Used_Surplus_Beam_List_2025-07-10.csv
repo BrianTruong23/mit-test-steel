@@ -1,7 +1,7 @@
 Description,Pieces,Lengths,Weight,Code
 6 x 12#,1,"14' 9""",177# ea.,SWF0612
 6 x 12.5# I-Beam,1,12',150# ea.,SWF06125
-6 x 12.5# I-Beam,2,40',500# ea.,SWF06125
+6 x 12.5# I-Beam,1,"27'9""",347# ea.,SWF06125
 6 x 15#,1,20',300# ea.,SWF0615
 6 x 20# ( Loc 275 ),1,"7' 7""",152# ea.,SWF0620
 6 x 25#,1,"8' 8""",217# ea.,SWF0625
@@ -16,7 +16,7 @@ Description,Pieces,Lengths,Weight,Code
 8 x 21#,1,"11' 1""",233# ea.,SWF0821
 8 x 21#,1,12',252# ea.,USBEAM
 8 x 21#,1,"14' 3""",299# ea.,SWF0821
-8 x 21#,3,18',378# ea.,USBEAM
+8 x 21#,1,18',378# ea.,USBEAM
 8 x 21#,1,"22' 5""",471# ea.,USBEAM
 8 x 21#,1,"30' 2""",634# ea.,USBEAM
 8 x 23# I-Beam,1,"23' 8""",544# ea.,SWF0823
@@ -36,10 +36,7 @@ Description,Pieces,Lengths,Weight,Code
 8 x 31#,1,"12' 9""",395# ea.,USBEAM
 8 x 31#,3,15',465# ea.,SWF0831
 8 x 31#,1,25',775# ea.,SWF0831
-8 x 31#,1,40',"1,240# ea.",SWF0831
-8 x 40#,1,25',"1,000# ea.",SWF0840
 8 x 40#,1,"28' 9""","1,150# ea.",SWF0840
-8 x 40#,1,35',"1,400# ea.",SWF0840
 8 x 48# (w/Holes in Web),1,"13' 3""",636# ea.,USBEAM
 8 x 58#,1,30',"1,740# ea.",SWF0858
 10 x 12#,1,"9' 5""",113# ea.,SWF1012
